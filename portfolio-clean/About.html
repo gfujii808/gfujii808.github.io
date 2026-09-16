@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Grace Fujii · About</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  section + section{border-top:0}
+  section .container{padding-top:24px;padding-bottom:64px}
+
+  .about-hero{position:relative;overflow:visible}
+  .about-hero .container{padding-top:12px;padding-bottom:8px;text-align:center;display:flex;
+    flex-direction:column;align-items:center;gap:32px}
+  .about-hero h1{margin:0;font-size:clamp(56px,8vw,120px);line-height:.96}
+  .about-hero h1 em{font-style:normal;color:var(--ink)}
+
+  .about-portrait{width:220px;height:220px;border-radius:50%;overflow:hidden;position:relative}
+  .about-portrait image-slot{width:100%;height:100%;display:block}
+
+  .about-bio{max-width:58ch;margin:0 auto;font-size:19px;line-height:1.75;color:var(--ink);
+    display:flex;flex-direction:column;gap:38px}
+  .about-bio p{margin:0}
+  section[data-screen-label="02 Bio"] .container{padding-top:48px;padding-bottom:96px}
+  .about-bio p em{font-style:italic;color:inherit;font-weight:500}
+  .about-bio p.standfirst{font-family:var(--font-display);font-size:clamp(26px,3.2vw,36px);
+    line-height:1.35;color:var(--ink);text-align:left;max-width:26ch;margin:8px 0}
+  .about-standin{width:100%;aspect-ratio:16/10;border-radius:6px;overflow:hidden;margin:8px 0}
+
+  section[data-screen-label="02 Bio"]{position:relative;overflow:visible}
+  .origin-wrap{max-width:60ch;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+  .origin-wrap .origin-lede{font-family:var(--font-display);font-size:clamp(24px,3vw,34px);line-height:1.3;color:var(--ink);text-align:center;margin:0 0 8px}
+  .origin-wrap .origin-lede em{font-style:normal;color:inherit}
+  .origin-wrap blockquote{margin:0;padding-left:20px;border-left:2px solid var(--maroon);
+    font-family:var(--font-body);font-style:italic;font-size:20px;line-height:1.45;color:var(--ink)}
+  .origin-wrap p{margin:0;font-size:17px;line-height:1.65;color:var(--ink)}
+  .origin-wrap p em{font-style:normal;color:inherit}
+
+  .pull-line{max-width:46ch;margin:4px auto 0;text-align:center;font-family:var(--font-body);
+    font-style:italic;font-size:18px;line-height:1.5;color:var(--ink-2);padding-top:14px;
+    border-top:1px solid var(--rule)}
+
+  .verbs-row{margin:20px auto 24px;width:100%;display:flex;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center;
+    padding:26px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .verbs-row .v{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:22ch}
+  .verbs-row .v .word{font-family:var(--font-display);font-weight:500;font-size:20px;color:var(--ink);line-height:1}
+  .verbs-row .v .gloss{font-size:14px;color:var(--ink-2);line-height:1.5}
+</style>
+</head>
+<body>
+
+<nav class="bouquet" aria-label="Site navigation">
+  <div class="bq-scrim"></div>
+  <div class="bq-cluster">
+    <span class="bq-panel" aria-hidden="true"></span>
+    <div class="bq-stems">
+      <a class="bq-stem" href="index.html" style="--ox:0px;--oy:-180px;--tilt:-4deg"><span class="bq-fl bq-fl-home"></span><span class="bq-lbl">Home</span></a>
+      <a class="bq-stem" href="CV.html" style="--ox:69px;--oy:-166px;--tilt:3deg"><span class="bq-fl bq-fl-cv"></span><span class="bq-lbl">CV</span></a>
+      <a class="bq-stem" href="GCSP.html" style="--ox:127px;--oy:-127px;--tilt:-3deg"><span class="bq-fl bq-fl-gcsp"></span><span class="bq-lbl">Grand Challenges</span></a>
+      <a class="bq-stem" href="About.html" data-current style="--ox:166px;--oy:-69px;--tilt:4deg"><span class="bq-fl bq-fl-about"></span><span class="bq-lbl">About</span></a>
+      <a class="bq-stem" href="Readings.html" style="--ox:180px;--oy:0px;--tilt:-2deg"><span class="bq-fl bq-fl-readings"></span><span class="bq-lbl">Bookshelf</span></a>
+    </div>
+    <button class="bq-bud" type="button" aria-expanded="false" aria-label="Open site navigation"><span class="bq-fl bq-fl-bud"></span></button>
+  </div>
+</nav>
+
+<main>
+
+<section class="about-hero" data-screen-label="01 About Hero">
+  <div class="container">
+    <div class="about-portrait">
+      <img src="assets/headshot-grace.png" alt="Grace Fujii" style="width:100%;height:100%;object-fit:cover;display:block">
+    </div>
+    <h1 class="display">Hi, I'm <em style="font-family: Borel, cursive">Grace</em>.</h1>
+  </div>
+</section>
+
+<section data-screen-label="02 Bio">
+  <div class="container">
+    <div class="about-bio">
+      <p>
+        I'm an <em style="font-style: normal; font-weight: 400">ʻIolani '24</em> and <em style="font-weight: 400; font-style: normal">Santa Clara University '28</em>
+        student with a love for learning. Raised in Hawaiʻi as a Chinese~American
+        adoptee and now studying in Silicon Valley, I major in General
+        Engineering with a self-designed concentration in <em>culturally sustaining
+        and accessible STEM learning</em>.
+      </p>
+
+      <div class="about-standin"><img src="assets/photo-symposium.png" alt="Presenting at the SCU Art History Symposium" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+
+      <p>
+        I have an extensive background in early childhood and elementary
+        education and competitive extracurricular STEM leadership in and out of the classroom.
+      </p>
+
+      <p>
+        I'm actively exploring <em>EdResearch</em> and <em>EdTech</em> through
+        a couple of research labs. In the Human-Computer Interaction Lab, I ask how
+        technology can facilitate stories and relationships, and how user
+        perspectives influence this. In the RESS Lab, I look into how cultural
+        backgrounds influence minorities in STEM higher ed.
+      </p>
+
+      <p>
+        If I'm not doing homework or in the HCI / RESSL labs, I'm probably
+        running, cooking, or playing the tenor sax :)
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="image-slot.js"></script>
+<script src="bouquet-nav.js" defer></script>
+
+</body>
+</html>

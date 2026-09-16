@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Grace Fujii · CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  section .container{padding-top:64px;padding-bottom:64px}
+  section + section{border-top:0}
+
+  .cv-hero .eyebrow{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:40px;flex-wrap:wrap}
+  .cv-hero .eyebrow .crumb{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+  .cv-hero .eyebrow .crumb b{color:var(--ink);font-weight:600}
+  .cv-hero .print-btn{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink);background:var(--paper);border:1.25px solid var(--ink);border-radius:2px;
+    padding:8px 14px;cursor:pointer;transition:background .15s,color .15s,transform .15s}
+  .cv-hero .print-btn:hover{background:var(--ink);color:var(--paper);transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--ink)}
+
+  .cv-hero h1{margin:0;font-family:var(--font-hand);font-weight:400;
+    font-size:clamp(56px, 8vw, 116px);line-height:.94;letter-spacing:0}
+  .cv-hero .role{margin:14px 0 0;font-family:var(--font-body);font-style:italic;font-weight:400;
+    font-size:clamp(18px, 2.1vw, 24px);color:var(--ink-2);letter-spacing:-0.008em;max-width:70ch;line-height:1.4}
+
+  .cv-contact{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 22px;
+    font-family:var(--font-mono);font-size:12.5px;color:var(--ink-2);letter-spacing:.02em}
+  .cv-contact a{color:var(--maroon);border-bottom:1px dashed transparent;padding-bottom:1px;transition:border-color .15s}
+  .cv-contact a:hover{border-color:var(--maroon)}
+
+  .cv-summary{margin-top:44px;padding-top:28px;border-top:1.5px solid var(--ink);
+    font-family:var(--font-display);font-weight:300;font-size:19px;line-height:1.5;color:var(--ink);
+    max-width:64ch}
+  .cv-summary em{font-style:normal;color:inherit;font-weight:500}
+
+  .cv-section-head{display:block;border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:8px}
+  .cv-section-head h2{margin:0;font-family:var(--font-hand);font-weight:400;
+    font-size:38px;line-height:1.1;letter-spacing:0}
+  .cv-section-head h2 em{font-style:normal;color:var(--ink);font-weight:400}
+  .cv-section-head .sub{margin:8px 0 0;font-family:var(--font-body);font-weight:300;font-size:15px;color:var(--ink-2)}
+
+  .cv-row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start;
+    padding:26px 0;border-bottom:1px solid var(--rule)}
+  .cv-row:last-child{border-bottom:1.5px solid var(--ink)}
+  .cv-row .when{grid-column:1 / span 3;font-family:var(--font-mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.04em;padding-top:3px}
+  .cv-row .body{grid-column:4 / span 9;display:flex;flex-direction:column;gap:6px}
+  .cv-row h3{margin:0;font-family:var(--font-display);font-weight:400;font-size:21px;line-height:1.25;letter-spacing:-0.008em}
+  .cv-row h3 em{font-style:normal;color:inherit;font-weight:500}
+  .cv-row .org{font-family:var(--font-body);font-weight:300;font-size:12.5px;color:var(--ink-2);letter-spacing:.02em;text-transform:none}
+  .cv-row .desc{font-size:14.5px;line-height:1.55;color:var(--ink-2);max-width:70ch}
+  .cv-row ul.bullets{margin:4px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:5px}
+  .cv-row ul.bullets li{font-size:14px;line-height:1.5;color:var(--ink-2)}
+  .cv-row .award{display:inline-flex;align-items:center;gap:6px;margin-top:2px;
+    font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+  .cv-row .award::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+  .cv-row .skills{margin-top:4px;font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--ink-2);letter-spacing:.01em}
+  .cv-row .links-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:2px}
+  .cv-row .links-row a{font-family:var(--font-body);font-weight:400;font-size:14.5px;color:var(--maroon);
+    border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color .15s}
+  .cv-row .links-row a:hover{border-color:var(--maroon)}
+
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:24px;border-bottom:1px solid var(--rule)}
+  .edu-cell{padding:26px 24px 26px 0;display:flex;flex-direction:column;gap:8px}
+  .edu-cell + .edu-cell{border-left:1px solid var(--rule);padding-left:24px}
+  .edu-cell .when{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em}
+  .edu-cell h3{margin:0;font-family:var(--font-display);font-weight:400;font-size:24px;line-height:1.15;letter-spacing:-0.012em}
+  .edu-cell h3 em{font-style:normal;color:inherit;font-weight:500}
+  .edu-cell .deg{font-size:14.5px;color:var(--ink);line-height:1.4}
+  .edu-cell .honors{margin-top:6px;font-size:13px;color:var(--ink-2);line-height:1.5;border-top:1px dashed var(--rule-2);padding-top:10px}
+  .edu-cell .honors em{font-style:normal;color:inherit;font-weight:500}
+  .edu-cell .honors a{color:var(--maroon);border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color .15s}
+  .edu-cell .honors a:hover{border-color:var(--maroon)}
+
+  .skl-grid{display:grid;grid-template-columns:repeat(4,1fr);column-gap:24px;border-top:1px solid var(--ink)}
+  .skl-col{padding:24px 20px 8px 0;display:flex;flex-direction:column;gap:10px}
+  .skl-col + .skl-col{border-left:1px solid var(--rule);padding-left:20px}
+  .skl-col h4{margin:0;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .skl-col p{margin:0;font-size:14px;line-height:1.6;color:var(--ink)}
+
+  .list-grid{display:block;border-bottom:1.5px solid var(--ink)}
+  .list-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+  .list-col li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule)}
+  .list-col li:last-child{border-bottom:0}
+  .list-col li .t{font-size:14.5px;color:var(--ink);line-height:1.4}
+  .list-col li .t em{font-style:normal;color:inherit;font-weight:500}
+  .list-col li .y{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-3);white-space:nowrap;letter-spacing:.04em}
+
+  @media (max-width: 980px){
+    .cv-row .when,.cv-row .body{grid-column:1 / -1}
+    .cv-row .when{margin-bottom:6px}
+    .edu-grid,.skl-grid{grid-template-columns:1fr}
+    .edu-cell + .edu-cell{border-left:0;border-top:1px solid var(--rule);padding:24px 0 0}
+    .skl-col + .skl-col{border-left:0;border-top:1px solid var(--rule);padding:20px 0 0}
+  }
+
+  @media print{
+    .topbar, footer.foot, .topline, .cv-hero .print-btn, body::before, .bouquet{display:none !important}
+    body{background:#fff}
+    .container{padding-left:0;padding-right:0;max-width:none}
+    section .container{padding-top:20px;padding-bottom:20px}
+    .cv-hero .container{padding-top:0}
+    a{color:inherit !important}
+    .cv-row, .edu-grid, .skl-grid, .list-grid{break-inside:avoid-page}
+  }
+</style>
+</head>
+<body>
+
+<nav class="bouquet" aria-label="Site navigation">
+  <div class="bq-scrim"></div>
+  <div class="bq-cluster">
+    <span class="bq-panel" aria-hidden="true"></span>
+    <div class="bq-stems">
+      <a class="bq-stem" href="index.html" style="--ox:0px;--oy:-180px;--tilt:-4deg"><span class="bq-fl bq-fl-home"></span><span class="bq-lbl">Home</span></a>
+      <a class="bq-stem" href="CV.html" data-current style="--ox:69px;--oy:-166px;--tilt:3deg"><span class="bq-fl bq-fl-cv"></span><span class="bq-lbl">CV</span></a>
+      <a class="bq-stem" href="GCSP.html" style="--ox:127px;--oy:-127px;--tilt:-3deg"><span class="bq-fl bq-fl-gcsp"></span><span class="bq-lbl">Grand Challenges</span></a>
+      <a class="bq-stem" href="About.html" style="--ox:166px;--oy:-69px;--tilt:4deg"><span class="bq-fl bq-fl-about"></span><span class="bq-lbl">About</span></a>
+      <a class="bq-stem" href="Readings.html" style="--ox:180px;--oy:0px;--tilt:-2deg"><span class="bq-fl bq-fl-readings"></span><span class="bq-lbl">Bookshelf</span></a>
+    </div>
+    <button class="bq-bud" type="button" aria-expanded="false" aria-label="Open site navigation"><span class="bq-fl bq-fl-bud"></span></button>
+  </div>
+</nav>
+
+<main>
+
+<section class="cv-hero" data-screen-label="01 CV Hero" style="overflow:visible">
+  <div class="container">
+    <h1>Grace Fujii</h1>
+    <p class="role">Undergraduate HCI researcher studying <em>human-computer interaction</em>, participatory design, and community-centered learning technology — with active project leads in AR experience design and a large-scale systematic review, targeting ACM CHI 2027.</p>
+
+    <div class="cv-contact">
+      <span>Honolulu, HI · Santa Clara, CA</span>
+      <a href="mailto:gfujii@scu.edu">gfujii@scu.edu</a>
+      <a href="https://www.linkedin.com/in/gracie-pi/" target="_blank" rel="noopener">linkedin.com/in/gracie-pi</a>
+      <a href="https://gfujii808.github.io/Ho-ike" target="_blank" rel="noopener">gfujii808.github.io/Ho-ike</a>
+    </div>
+  </div>
+</section>
+
+<section id="education" data-screen-label="02 Education">
+  <div class="container">
+    <div class="cv-section-head">
+      <h2><em>Learning</em>, formally.</h2>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu-cell">
+        <span class="when">Expected graduation: 06 / 2028</span>
+        <h3>Santa Clara <em>University</em></h3>
+        <p class="deg">B.S. General Engineering, EdTech concentration · GPA 3.6 · CBL Fellow</p>
+        <p class="honors">
+          Coursework: Human-Computer Interaction; Advanced Programming (C);
+          Probability and Statistics; Basic Digital Imaging; <a href="coursework-projects.html#engr1">Intro to Engineering</a>;
+          <a href="coursework-projects.html#engr110">Community Based Engineering Design</a>; <a href="engr2-maker-log.html">Introduction to Engineering Design
+          and Prototyping</a>.<br>
+          Honors and Activities: University Honors · <em>Grand Challenges Scholar</em> · <em>Engineers Without Borders</em> (Internal Education team) ·
+          <em>Society of Women Engineers</em>
+        </p>
+      </div>
+      <div class="edu-cell">
+        <span class="when">06 / 2024</span>
+        <h3>ʻIolani <em>School</em></h3>
+        <p class="deg">Diploma · Honolulu, HI</p>
+        <p class="honors">
+          Honors: National Merit Finalist · AP Scholar with Distinction · Hamada
+          "Selflessness" Award.<br>
+          Leadership: Cross Country Captain · Science Olympiad Coach · FLL Innovation
+          Project Lead Mentor
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Publications ── -->
+<section id="publications" data-screen-label="03 Publications">
+  <div class="container">
+    <div class="cv-section-head">
+      <h2><em>Publications</em>.</h2>
+    </div>
+    <div class="cv-rows">
+      <div class="cv-row">
+        <span class="when">In progress · ACM CHI 2027</span>
+        <div class="body">
+          <h3>Ohlone AR <em>Comparative Perspectives Study</em></h3>
+          <p class="desc">A mixed-methods study of diverse community perspectives in AR experiences of contested sites.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Research ── -->
+<section id="research" data-screen-label="04 Research">
+  <div class="container">
+    <div class="cv-section-head">
+      <h2><em>Research</em> &amp; presentations.</h2>
+    </div>
+
+    <div class="cv-rows">
+
+      <div class="cv-row" id="ohlone">
+        <span class="when">12 / 2025 · present</span>
+        <div class="body">
+          <h3>Thámien Ohlone <em>AR Tour</em> · Undergraduate Researcher, Project Lead</h3>
+          <span class="org">Human-Computer Interaction (HCI) Lab, SCU · PI: Kai Lukoff</span>
+          <p class="desc">
+            Designing and conducting a mixed-methods study — 60+ in-situ observations
+            and interviews across 3 communities — on user learning and engagement in AR
+            experiences of contested sites, using Reflexive Thematic Analysis as the
+            primary methodology. The award-winning tour immerses users in the
+            indigenous heritage of the Bay Area through AR, integrating ancestral
+            history and Indigenous storytelling with place-based UX and Indigenous-centered
+            codesign. Leading a team of 12 student research assistants, working with 4
+            co-Principal Investigators.
+          </p>
+          <span class="award">Clare Boothe Luce Research Fellow · $20,000 award</span>
+          <p class="skills">Research / AR &amp; XR / Indigenous Partnership</p>
+          <div class="links-row"><a href="https://scuhci.com/ohlone-ar/" target="_blank" rel="noopener">visit the project site</a></div>
+        </div>
+      </div>
+
+      <div class="cv-row" id="ressl">
+        <span class="when">01 / 2026 · present</span>
+        <div class="body">
+          <h3>REdefining Science and Society Lab <em>(RESSL)</em> · Student Researcher</h3>
+          <span class="org">Santa Clara University · PI: Forsythe</span>
+          <p class="desc">Conducting a systematic literature review of ~1,000 papers (Covidence) on Community Cultural Wealth in STEM education; managing title/abstract screening, inclusion/exclusion coding, and qualitative synthesis pipeline.</p>
+          <p class="skills">Research / Systematic Review / STEM Equity</p>
+          <div class="links-row"><a href="https://www.dforsythelab.com/research" target="_blank" rel="noopener">visit the lab site</a></div>
+        </div>
+      </div>
+
+      <div class="cv-row" id="hoike">
+        <span class="when">2025</span>
+        <div class="body">
+          <h3>Hōʻike <em>Explorer</em></h3>
+          <span class="org">Personal · Hawaiʻi</span>
+          <p class="desc">A personal exploration addressing the Hawaiʻi brain drain through hidden curriculum research · an AI-built and assisted digital network connecting educators, professionals, and learners across the diaspora. Simply an exploratory imagining, not a deployed product.</p>
+          <p class="skills">Personal / AI / Hawaiian Diaspora</p>
+          <div class="links-row"><a href="https://gfujii808.github.io/Ho-ike/demo/index.html" target="_blank" rel="noopener">view the live tool</a></div>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <span class="when">03 / 2026</span>
+        <div class="body">
+          <h3>“The Art of the Game” <em>· Hanafuda</em></h3>
+          <span class="org">SCU Center for Sustainability · Sustainability &amp; Environmental Justice Research Symposium</span>
+          <p class="desc">Natural and temporal expressions of culture in the Japanese card game Hanafuda. Presented at the symposium.</p>
+          <p class="skills">Presentation / Art History</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <span class="when">06 / 2025</span>
+        <div class="body">
+          <h3>“Where Are You Really From” <em>· Chinese~American Adoptees</em></h3>
+          <span class="org">Dept. of Art and Art History, SCU · Art History Symposium</span>
+          <p class="desc">Understanding where Chinese~American adoptees are coming from.</p>
+          <span class="award">Best Art History C&amp;I Paper Prize</span>
+          <p class="skills">Presentation / Art History</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Teaching & Mentorship ── -->
+<section id="teaching" data-screen-label="05 Teaching">
+  <div class="container">
+    <div class="cv-section-head">
+      <h2><em>Teaching</em> &amp; mentorship.</h2>
+    </div>
+
+    <div class="cv-rows">
+
+      <div class="cv-row">
+        <span class="when">04 / 2024 · present</span>
+        <div class="body">
+          <h3>Teacher <em>· SPARK SCU</em></h3>
+          <span class="org">SPARK at Santa Clara University</span>
+          <p class="desc">Designed and implemented original lesson plans for an "Intro to Engineering" class for San Jose middle and high school students.</p>
+          <p class="skills">Lesson Plan Design / Teaching</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <span class="when">10 / 2024 · present</span>
+        <div class="body">
+          <h3>Judge <em>· FLL Robotics</em></h3>
+          <span class="org">FIRST Robotics: Playing at Learning · Santa Clara, CA</span>
+          <p class="desc">Judged Robot Design and Innovation Project presentations, working with other judge volunteers to provide feedback to teams of middle school robotics competitors.</p>
+          <p class="skills">Robotics / Mentorship</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <span class="when">09 / 2025 · present</span>
+        <div class="body">
+          <h3>Student Mentor <em>· Kūlia College Pathways</em></h3>
+          <span class="org">Kūlia College Pathways · Honolulu, HI</span>
+          <p class="desc">Mentored a student from a local Hawaiʻi public high school, providing guidance and support to navigate college applications and early college life.</p>
+          <p class="skills">Mentorship / Community</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <span class="when">09 / 2022 · 05 / 2024</span>
+        <div class="body">
+          <h3>Innovation Project Lead Mentor <em>&amp; Competitor · ʻIobotics</em></h3>
+          <span class="org">ʻIolani School: ʻIobotics · Honolulu, HI</span>
+          <p class="desc">
+            Attended World Championship 2023, piloting a program revival with 20
+            students (gr. 4–6), emphasizing the Engineering Design Process. Through
+            ʻIobotics Outreach (Ignite / Impact Team), competed at World Championship
+            2024, partnering with Hawaiʻi DOE Hawaiian Language Immersion Schools to
+            curate and implement a culturally responsive, place-based STEM lesson plan
+            for K–1 students.
+          </p>
+          <p class="skills">Robotics / Teaching / Community</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <span class="when">02 / 2021 · 03 / 2023</span>
+        <div class="body">
+          <h3>Student Coach <em>&amp; Coordinator · Science Olympiad</em></h3>
+          <span class="org">ʻIolani School · Honolulu, HI</span>
+          <p class="desc">Coordinated 50+ students' participation in competitions. Overhauled the organization system, improving management efficiency and promoting program sustainability and expansion by ~40% — teams attended National Competition for the first time in 8 years.</p>
+          <p class="skills">Leadership / STEM</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <span class="when">08 / 2022 · 08 / 2025</span>
+        <div class="body">
+          <h3>Seasonal Preschool <em>Teacher Assistant</em></h3>
+          <span class="org">Good Shepherd Lutheran Church and Preschool · Liliha, HI</span>
+          <p class="desc">Designed and implemented structural educational routines for ages 3–5 in bilingual and ESL classrooms, introducing and assessing early STEM and literacy development. Conducted assessments; worked with faculty and families to promote academic and developmental success.</p>
+          <p class="skills">Teaching / Early Childhood</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <span class="when">06 / 2023 · 07 / 2025</span>
+        <div class="body">
+          <h3>Summer School Teacher Assistant <em>&amp; Student Worker</em></h3>
+          <span class="org">ʻIolani School: Special Programs Office &amp; Residential Life Admissions, Honolulu, HI</span>
+          <p class="desc">Supervised student activities and guided a project-based Engineering Design Process class (gr. 2–6) for Special Programs. Assisted Residential Life Admissions in designing and executing community programs integrating international cultural backgrounds and student engagement events.</p>
+          <p class="skills">Teaching / Community</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills" data-screen-label="07 Skills">
+  <div class="container">
+    <div class="cv-section-head">
+      <h2><em>Methods</em> &amp; tools.</h2>
+    </div>
+
+    <div class="skl-grid">
+      <div class="skl-col">
+        <h4>Research</h4>
+        <p>Human-Computer Interaction · Mixed-Methods Research · Qualitative Research (Reflexive Thematic Analysis) · Systematic Literature Review (Covidence) · Instrument (Survey) Design · Participatory Design · Place-Based Learning</p>
+      </div>
+      <div class="skl-col">
+        <h4>Technical</h4>
+        <p>C (Intermediate) · HTML · CSS · Engineering Design Process · Prototyping · CAD (SolidWorks)</p>
+      </div>
+      <div class="skl-col">
+        <h4>Software</h4>
+        <p>G Suite · Microsoft Office · Adobe Creative Suite · Covidence · GitHub</p>
+      </div>
+      <div class="skl-col">
+        <h4>Communication</h4>
+        <p>Interdisciplinary Coordination · Public Speaking · Task Tracking · Documentation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="bouquet-nav.js" defer></script>
+
+</body>
+</html>
