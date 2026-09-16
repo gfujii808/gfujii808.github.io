@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Coursework Projects · Grace Fujii</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<style>
+section + section{border-top:0}
+section .container{padding-top:24px;padding-bottom:64px}
+.cs-hero{position:relative;overflow:visible}
+.cs-hero .container{padding-top:12px;padding-bottom:8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.cs-hero h1{margin:0;font-size:clamp(44px,6.6vw,88px);line-height:1.02}
+.cs-hero h1 em{font-style:normal;color:var(--ink)}
+.cs-hero .subhead{font-family:var(--font-body);font-style:italic;font-weight:300;font-size:clamp(18px,2.2vw,24px);color:var(--ink-2);max-width:44ch;margin:0}
+.cs-hero .school{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+
+.proj-section{border-top:1.5px solid var(--ink);padding:56px 0}
+.proj-section .container{padding-top:0;padding-bottom:0}
+.proj-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.proj-head h2{margin:0;font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3.4vw,40px);line-height:1.1}
+.proj-head h2 em{font-style:normal;color:var(--ink)}
+.proj-head .when{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
+
+.proj-body{display:block}
+.cs-portrait{width:220px;height:220px;border-radius:8px;overflow:hidden;position:relative;float:right;margin:0 0 16px 28px}
+.cs-portrait image-slot{width:100%;height:100%;display:block}
+.cs-portrait.landscape{width:100%;height:auto;aspect-ratio:16/9;float:none;margin:0 0 16px}
+
+.proj-body.feature{display:flex;flex-direction:column;gap:14px}
+.cs-feature-img{width:100%;aspect-ratio:1958/1080;border-radius:8px;overflow:hidden;position:relative;background:#0a1628}
+.cs-feature-img image-slot{width:100%;height:100%;display:block}
+.cs-caption{max-width:62ch;display:flex;flex-direction:column;gap:10px}
+.cs-caption p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-2);font-style:italic}
+.cs-caption .cs-links{margin-top:0}
+
+.proj-copy p{margin:0 0 16px;font-size:16.5px;line-height:1.7;color:var(--ink)}
+.cs-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px;clear:right}
+
+@media (max-width:760px){.cs-portrait{float:none;width:100%;height:220px;margin:0 0 16px}}
+</style>
+</head>
+<body>
+
+<nav class="bouquet" aria-label="Site navigation">
+  <div class="bq-scrim"></div>
+  <div class="bq-cluster">
+    <span class="bq-panel" aria-hidden="true"></span>
+    <div class="bq-stems">
+      <a class="bq-stem" href="index.html" style="--ox:0px;--oy:-180px;--tilt:-4deg"><span class="bq-fl bq-fl-home"></span><span class="bq-lbl">Home</span></a>
+      <a class="bq-stem" href="CV.html" style="--ox:69px;--oy:-166px;--tilt:3deg"><span class="bq-fl bq-fl-cv"></span><span class="bq-lbl">CV</span></a>
+      <a class="bq-stem" href="GCSP.html" style="--ox:127px;--oy:-127px;--tilt:-3deg"><span class="bq-fl bq-fl-gcsp"></span><span class="bq-lbl">Grand Challenges</span></a>
+      <a class="bq-stem" href="About.html" style="--ox:166px;--oy:-69px;--tilt:4deg"><span class="bq-fl bq-fl-about"></span><span class="bq-lbl">About</span></a>
+      <a class="bq-stem" href="Readings.html" style="--ox:180px;--oy:0px;--tilt:-2deg"><span class="bq-fl bq-fl-readings"></span><span class="bq-lbl">Bookshelf</span></a>
+    </div>
+    <button class="bq-bud" type="button" aria-expanded="false" aria-label="Open site navigation"><span class="bq-fl bq-fl-bud"></span></button>
+  </div>
+</nav>
+
+<main>
+
+<section class="cs-hero" data-screen-label="01 Hero">
+  <div class="container">
+    <span class="school">Santa Clara University · School of Engineering</span>
+    <h1 class="display">Coursework <em>Projects</em>.</h1>
+    <p class="subhead">Classroom builds from Santa Clara's School of Engineering.</p>
+  </div>
+</section>
+
+<section class="proj-section" id="engr110" data-screen-label="02 ENGR 110">
+  <div class="container">
+    <div class="proj-head">
+      <h2>Space Science <em>Badge-in-a-Box</em> · ENGR 110</h2>
+      <span class="when">Spring '26 · Completed</span>
+    </div>
+    <div class="proj-body feature">
+      <div class="cs-feature-img"><img src="assets/engr110-feature.jpg" alt="ENGR 110 team summary slide: Space Science Badge in a Box, purpose, design summary, results, and the five hands-on activities with Girl Scouts" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+      <div class="cs-caption">
+        <p style="height: 51px; width: 853px">ENGR 110 partnered with Girl Scouts of Northern California to design a self-contained space-science curriculum. I worked as the team's resource and documentation manager, tracking materials lists and budgets and making sure all items were handed off cleanly from teammates to council.</p>
+        <div class="cs-links">
+          <a class="linkpill" href="https://sites.google.com/scu.edu/fujii-engr110/home" target="_blank" rel="noopener">original project site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proj-section" id="engr1" data-screen-label="03 ENGR 1">
+  <div class="container">
+    <div class="proj-head">
+      <h2>A Personal <em>Cheerleader Robot</em> · ENGR 1</h2>
+      <span class="when">Spring '25 · Completed</span>
+    </div>
+    <div class="proj-body">
+      <div class="cs-portrait landscape"><img src="assets/engr1-robot.jpg" alt="Cheerleader robot with pompoms, ENGR 1" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="proj-copy">
+        <p>Intro to Engineering (ENGR 1) asked each team to design and build a small personal robot from scratch: mechanical design, motion, and a live demo after a couple weeks of work. My team's first idea was an eraser for classroom whiteboard tables, but working through the physical and time constraints of the term pushed us toward something more playful: a cheerleader robot. I served as mechanical and project lead on our three-person team, leading the pivot, laser cutting the final parts, and assembling the robot for demo day.</p>
+        <div class="cs-links">
+          <a class="linkpill" href="https://sites.google.com/scu.edu/team20week7/home" target="_blank" rel="noopener">original team site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Back">
+  <div class="container" style="text-align:center;padding-top:8px">
+    <a href="CV.html#education" style="font-family:var(--font-hand);font-size:20px;color:var(--maroon)">back to the CV</a>
+  </div>
+</section>
+
+</main>
+
+<script src="image-slot.js"></script>
+<script src="bouquet-nav.js" defer></script>
+
+</body>
+</html>

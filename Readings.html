@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Grace Fujii · Bookshelf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .rd-hero .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:22px}
+  .rd-hero h1{margin:0;font-family:var(--font-display);font-weight:500;font-size:clamp(48px,7vw,92px);line-height:.96;letter-spacing:-0.02em}
+  .rd-hero h1 em{font-style:normal;color:var(--ink)}
+  .rd-hero p.lede{margin-top:20px}
+
+  .catalog{display:flex;flex-direction:column;gap:0}
+  .theme-group{border-top:1px solid var(--rule);padding:40px 0}
+  .theme-group:first-child{border-top:0;padding-top:8px}
+  .theme-head{margin:0 0 28px;font-family:var(--font-hand);font-weight:400;font-size:30px;line-height:1.1;color:var(--ink)}
+  .theme-head em{font-style:normal;color:inherit}
+  .entry-list{display:flex;flex-direction:column}
+  .entry{display:grid;grid-template-columns:140px 1fr;column-gap:24px;padding:18px 0;border-top:1px solid var(--rule)}
+  .entry:first-child{border-top:0}
+  .entry .kind{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding-top:3px}
+  .entry h3{margin:0;font-family:var(--font-display);font-weight:400;font-size:18px;line-height:1.3;letter-spacing:-0.005em}
+  .entry h3 a{color:var(--ink);border-bottom:1.5px solid transparent;transition:border-color .15s,color .15s}
+  .entry h3 a:hover{color:var(--maroon);border-color:var(--maroon)}
+  .entry .byline{display:block;margin-top:4px;font-family:var(--font-body);font-style:italic;font-size:13.5px;color:var(--ink-2)}
+  @media (max-width:680px){.entry{grid-template-columns:1fr;row-gap:6px}}
+</style>
+</head>
+<body>
+
+<nav class="bouquet" aria-label="Site navigation">
+  <div class="bq-scrim"></div>
+  <div class="bq-cluster">
+    <span class="bq-panel" aria-hidden="true"></span>
+    <div class="bq-stems">
+      <a class="bq-stem" href="index.html" style="--ox:0px;--oy:-180px;--tilt:-4deg"><span class="bq-fl bq-fl-home"></span><span class="bq-lbl">Home</span></a>
+      <a class="bq-stem" href="CV.html" style="--ox:69px;--oy:-166px;--tilt:3deg"><span class="bq-fl bq-fl-cv"></span><span class="bq-lbl">CV</span></a>
+      <a class="bq-stem" href="GCSP.html" style="--ox:127px;--oy:-127px;--tilt:-3deg"><span class="bq-fl bq-fl-gcsp"></span><span class="bq-lbl">Grand Challenges</span></a>
+      <a class="bq-stem" href="About.html" style="--ox:166px;--oy:-69px;--tilt:4deg"><span class="bq-fl bq-fl-about"></span><span class="bq-lbl">About</span></a>
+      <a class="bq-stem" href="Readings.html" data-current style="--ox:180px;--oy:0px;--tilt:-2deg"><span class="bq-fl bq-fl-readings"></span><span class="bq-lbl">Bookshelf</span></a>
+    </div>
+    <button class="bq-bud" type="button" aria-expanded="false" aria-label="Open site navigation"><span class="bq-fl bq-fl-bud"></span></button>
+  </div>
+</nav>
+
+<main>
+
+<section class="rd-hero" data-screen-label="01 Readings Hero" style="overflow:visible">
+  <div class="container">
+    <h1>My <em>bookshelf</em>.</h1>
+    <p class="lede">Collecting words and ideas.</p>
+  </div>
+</section>
+
+<section data-screen-label="02 Reading List" style="overflow:visible">
+  <div class="container">
+    <div class="catalog">
+
+      <div class="theme-group">
+        <h2 class="theme-head">Currently <em>reading</em></h2>
+        <div class="entry-list">
+          <div class="entry"><span class="kind">Book · in progress</span>
+            <div><h3>Lost in a Dream</h3>
+            <span class="byline">Chet Baker biography</span></div>
+          </div>
+          <div class="entry"><span class="kind">Book · in progress</span>
+            <div><h3>Asian American Dreams</h3></div>
+          </div>
+          <div class="entry"><span class="kind">Book · in progress</span>
+            <div><h3>Packing for Mars</h3>
+            <span class="byline">Mary Roach</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-group">
+        <h2 class="theme-head">Indigenous methods &amp; <em>knowledge systems</em></h2>
+        <div class="entry-list">
+          <div class="entry"><span class="kind">Journal article</span>
+            <div><h3><a href="https://watermark02.silverchair.com/pres_a_00301.pdf" target="_blank" rel="noopener">Kilo Hōkū</a></h3>
+            <span class="byline">Kari Noe et al. · Presence: VR</span></div>
+          </div>
+          <div class="entry"><span class="kind">Journal article</span>
+            <div><h3><a href="https://link.springer.com/article/10.1007/s13384-022-00542-3" target="_blank" rel="noopener">Indigenous Early Career Mentoring in Higher Education</a></h3>
+            <span class="byline">Povey, Trudgett, Page, Locke &amp; Harry</span></div>
+          </div>
+          <div class="entry"><span class="kind">Journal article</span>
+            <div><h3><a href="https://maui.hawaii.edu/wp-content/uploads/sites/4/2018/10/Manu-Meyer-Our-Own-Liberation-Hawaiian-Epistemology-1.pdf" target="_blank" rel="noopener">Reflections on Hawaiian Epistemology</a></h3>
+            <span class="byline">Manulani Aluli Meyer</span></div>
+          </div>
+          <div class="entry"><span class="kind">Conference paper</span>
+            <div><h3><a href="https://doi.org/10.1145/3613904.3642931" target="_blank" rel="noopener">Generalized Design Practice → Specific Indigenous Communities</a></h3>
+            <span class="byline">Kari Noe &amp; Nurit Kirshenbaum</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-group">
+        <h2 class="theme-head">Learning sciences &amp; <em>informal education</em></h2>
+        <div class="entry-list">
+          <div class="entry"><span class="kind">Conference paper</span>
+            <div><h3><a href="https://dl.acm.org/doi/10.1145/2771839.2771922" target="_blank" rel="noopener">Chinese Lifelong Learning Labs</a></h3>
+            <span class="byline">Francois Grey et al.</span></div>
+          </div>
+          <div class="entry"><span class="kind">Report · in progress</span>
+            <div><h3><a href="https://cms.learningthroughplay.com/media/wmtlmbe0/learning-through-play_web.pdf" target="_blank" rel="noopener">Learning Through Play</a></h3>
+            <span class="byline">The LEGO Foundation</span></div>
+          </div>
+          <div class="entry"><span class="kind">Blog post</span>
+            <div><h3><a href="https://blog.terc.edu/sound-travels" target="_blank" rel="noopener">TERC Sound Travels</a></h3>
+            <span class="byline">TERC</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-group">
+        <h2 class="theme-head">AI in <em>education</em></h2>
+        <div class="entry-list">
+          <div class="entry"><span class="kind">Project site</span>
+            <div><h3><a href="https://taico-project.eu/" target="_blank" rel="noopener">Teacher-AI Complementarity (TAICo)</a></h3>
+            <span class="byline">TAICo Project Consortium</span></div>
+          </div>
+          <div class="entry"><span class="kind">Preprint</span>
+            <div><h3><a href="https://arxiv.org/pdf/2603.16646" target="_blank" rel="noopener">Hawaiʻi AI Auditing Tools</a></h3>
+            <span class="byline">—</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="bouquet-nav.js" defer></script>
+
+</body>
+</html>
