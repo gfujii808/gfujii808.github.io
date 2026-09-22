@@ -46,6 +46,13 @@ section .container{padding-top:48px;padding-bottom:48px}
 .mk-entry .shot{display:inline-flex;flex-direction:column;gap:6px;margin:0}
 .mk-entry .shot figcaption{font-size:13px;line-height:1.5;font-style:italic;color:var(--ink-3);max-width:150px}
 .mk-empty{font-family:var(--font-body);font-style:italic;font-size:14.5px;color:var(--ink-3);margin:0}
+.mk-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.mk-carousel .shot{scroll-snap-align:start;flex:0 0 auto;display:flex;
+  flex-direction:column;gap:6px;margin:0;width:150px}
+.mk-carousel::-webkit-scrollbar{height:6px}
+.mk-carousel::-webkit-scrollbar-thumb{background:var(--rule-2);border-radius:3px}
+  
 @media (max-width:900px){.mk-about{grid-template-columns:1fr}.mk-entry .shots image-slot{width:120px;height:120px}}
 </style>
 </head>
@@ -117,13 +124,13 @@ section .container{padding-top:48px;padding-bottom:48px}
             <p><b>Description:</b> This project was an introduction to the sticker-making process and Maker Lab as a whole. We followed the following process: Design → Cutting → Weeding → Transferring top layer onto bottom layer → Stickering. The design I chose was a cute/whimsical little mushroom with a froggy friend. I started with the mushroom, as I wanted to have something that I could design on Inkscape with simple shapes (rectangle, oval) before sending the components (red base, white dots) to Silhouette Studio. Then, I thought the mushroom would be lonely, so I chose to trace a <a href="https://www.vecteezy.com/vector-art/67534460-collection-of-five-stylized-black-and-white-frog-illustrations ">free SVG of a frog</a>directly in Silhouette Studio.</p>
             <p><b>Time Log:</b> Each sticker took about 20 minutes to complete, from the designing to the actual sticker-ing.</p>
             <p><b>Reflection:</b> From this experience, I learned how to use the sticker machine and Silhouette Studio software. In Silhouette Studio, I initially had trouble importing my mushroom design as an SVG, so resorted to a PNG (image 2). From there, the PNG was unable to be separated for cutting (cutting one color on the left of the cutting board, another color on the right of the cutting board), and tracing was not an option, as my Inkscape project used hairline (no tolerances could find the lines). From this, I learned to use the eraser tool and to use thicker lines if I wanted to trace images.</p>
-            <div class="shots">
-              <figure class="shots"><img src="assets/engr2/demo.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>1. This is how we practiced weeding and two-color stickers.</figcaption></figure>
-              <figure class="shots"><img src="assets/engr2/separate-mushies.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>2. Mushroom component separation!</figcaption></figure>
-              <figure class="shots"><img src="assets/engr2/frogress.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>3. Frog progress... frogress??</figcaption></figure>
-              <figure class="shots"><img src="assets/engr2/final-mushroom.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>4. The final mushroom!</figcaption></figure>
-              <figure class="shots"><img src="assets/engr2/settings.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>5. Cut settings on the machine.</figcaption></figure>
-            </div>
+            <div class="shots"><div class="mk-carousel">
+              <figure class="shots"><img src="assets/engr2/P1/demo.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>1. This is how we practiced weeding and two-color stickers.</figcaption></figure>
+              <figure class="shots"><img src="assets/engr2/P1/separate-mushies.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>2. Mushroom component separation!</figcaption></figure>
+              <figure class="shots"><img src="assets/engr2/P1/frogress.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>3. Frog progress... frogress??</figcaption></figure>
+              <figure class="shots"><img src="assets/engr2/P1/final-mushroom.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>4. The final mushroom!</figcaption></figure>
+              <figure class="shots"><img src="assets/engr2/P1/settings.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>5. Cut settings on the machine.</figcaption></figure>
+            </div></div>
           </div>
         </div>
       </details>
