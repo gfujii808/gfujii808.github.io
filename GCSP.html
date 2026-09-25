@@ -15,13 +15,22 @@ section + section{border-top:0}
 .gcsp-hero h1 em{font-style:normal;color:var(--ink)}
 .gcsp-hero .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 
-.stub{max-width:52ch;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:24px;padding:24px 0 96px}
-.stub p{margin:0;font-size:17px;line-height:1.7;color:var(--ink-2)}
-.stub .list{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule)}
-.stub .list li{padding:14px 0;border-bottom:1px solid var(--rule);font-family:var(--font-display);font-size:17px;color:var(--ink-3);letter-spacing:-0.005em}
-.stub .back{margin-top:8px}
-.stub .back a{color:var(--maroon);border-bottom:1px solid var(--rule-2);padding-bottom:1px;transition:border-color .15s}
-.stub .back a:hover{border-color:var(--maroon)}
+.gc-thesis{max-width:40ch;margin:0;font-family:var(--font-body);font-style:italic;font-size:clamp(20px,2.2vw,26px);line-height:1.4;color:var(--ink);text-wrap:pretty}
+.gc-thesis:empty{display:none}
+.gc-list{max-width:820px;margin:0 auto;padding:24px 0 40px;display:flex;flex-direction:column;border-top:1.5px solid var(--ink)}
+.gc-row{display:grid;grid-template-columns:240px minmax(0,1fr);gap:32px;padding:24px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.gc-row h2{margin:0;font-family:var(--font-display);font-weight:500;font-size:22px;letter-spacing:-0.01em;color:var(--ink)}
+.gc-row .bridge{margin:0 0 8px;font-size:16px;line-height:1.6;color:var(--ink-2);text-wrap:pretty}
+.gc-row .bridge:empty{display:none}
+.gc-row .ev{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--font-body);font-size:15px}
+.gc-row .ev a{color:var(--maroon);border-bottom:1px solid var(--rule-2);padding-bottom:1px;transition:border-color .15s}
+.gc-row .ev a:hover{border-color:var(--maroon)}
+.gc-row .status{font-family:var(--font-body);font-style:italic;font-size:15px;color:var(--ink-3)}
+.gc-row.later h2{color:var(--ink-3)}
+.gc-back{text-align:center;padding-bottom:96px}
+.gc-back a{color:var(--maroon);border-bottom:1px solid var(--rule-2);padding-bottom:1px}
+.gc-back a:hover{border-color:var(--maroon)}
+@media (max-width:680px){.gc-row{grid-template-columns:1fr;gap:8px}}
 </style>
 </head>
 <body>
@@ -42,30 +51,28 @@ section + section{border-top:0}
 </nav>
 
 <main>
-
 <section class="gcsp-hero" data-screen-label="01 GCSP Hero">
   <div class="container">
     <span class="tag">Grand Challenges Scholar Program</span>
-    <h1>Under <em>construction</em>.</h1>
+    <h1>Grand <em>Challenges</em>.</h1>
+    <!-- Thesis question: write it inside the p below. Empty = hidden. -->
+    <p class="gc-thesis"></p>
   </div>
 </section>
-
-<section data-screen-label="02 Stub">
+<!-- Each row: write the one-line link to the theme inside <p class="bridge"></p>. Empty = hidden. -->
+<section data-screen-label="02 Competencies">
   <div class="container">
-    <div class="stub">
-      <p>This will be the e-folio for the five GCSP competencies — research talent, multidisciplinary curriculum, multicultural experience, entrepreneurship, and service-learning — once there's enough real work behind each one to write about properly.</p>
-      <ul class="list">
-        <li>Research talent</li>
-        <li>Multidisciplinary curriculum</li>
-        <li>Multicultural experience</li>
-        <li>Entrepreneurship</li>
-        <li>Service-learning</li>
-      </ul>
-      <p class="back"><a href="index.html">back to home</a></p>
+    <div class="gc-list">
+      <div class="gc-row"><h2>Research talent</h2><div><p class="bridge"></p><div class="ev"><a href="CV.html#ohlone">Thámien Ohlone AR Tour</a><a href="CV.html#research">RESSL systematic review</a></div></div></div>
+      <div class="gc-row"><h2>Multidisciplinary curriculum</h2><div><p class="bridge"></p><span class="status">in progress</span></div></div>
+      <div class="gc-row"><h2>Multicultural experience</h2><div><p class="bridge"></p><div class="ev"><a href="https://gfujii808.github.io/Ho-ike/demo/index.html" target="_blank" rel="noopener">Hōʻike Explorer</a></div></div></div>
+      <div class="gc-row"><h2>Entrepreneurship</h2><div><p class="bridge"></p><span class="status">in progress</span></div></div>
+      <div class="gc-row"><h2>Service-learning</h2><div><p class="bridge"></p><span class="status">in progress</span></div></div>
+      <div class="gc-row later"><h2>Outcome evaluation</h2><span class="status">Added once the five competencies have work behind them.</span></div>
     </div>
+    <p class="gc-back"><a href="index.html">back to home</a></p>
   </div>
 </section>
-
 </main>
 
 <script src="bouquet-nav.js" defer></script>
