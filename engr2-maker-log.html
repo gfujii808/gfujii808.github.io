@@ -46,12 +46,14 @@ section .container{padding-top:48px;padding-bottom:48px}
 .mk-entry .shot{display:inline-flex;flex-direction:column;gap:6px;margin:0}
 .mk-entry .shot figcaption{font-size:13px;line-height:1.5;font-style:italic;color:var(--ink-3);max-width:150px}
 .mk-empty{font-family:var(--font-body);font-style:italic;font-size:14.5px;color:var(--ink-3);margin:0}
-.mk-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
-  padding-bottom:8px;-webkit-overflow-scrolling:touch}
-.mk-carousel .shot{scroll-snap-align:start;flex:0 0 auto;display:flex;
-  flex-direction:column;gap:6px;margin:0;width:150px}
-.mk-carousel::-webkit-scrollbar{height:6px}
-.mk-carousel::-webkit-scrollbar-thumb{background:var(--rule-2);border-radius:3px}
+.mk-carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;border-radius:6px}
+.mk-carousel .shot{scroll-snap-align:start;flex:0 0 100%;width:100%;
+  display:flex;flex-direction:column;gap:8px;margin:0}
+.mk-carousel .shot img{width:100%;height:360px;object-fit:cover;
+  border-radius:6px;display:block}
+.mk-carousel .shot figcaption{font-size:14px;line-height:1.5;
+  font-style:italic;color:var(--ink-2)}
   
 @media (max-width:900px){.mk-about{grid-template-columns:1fr}.mk-entry .shots image-slot{width:120px;height:120px}}
 </style>
@@ -99,15 +101,6 @@ section .container{padding-top:48px;padding-bottom:48px}
 <section data-screen-label="03 Projects" style="overflow:visible">
   <div class="container">
 
-    <!-- WORKFLOW: the weekly Google Doc (submitted via Camino) is the graded source of truth —
-         write entries there in real time as work happens. This page is a lightly-edited public
-         distillation of the same material, not a second thing written from scratch.
-         To add a week: copy an existing .mk-entry div, paste it in, change the date, replace the
-         paragraph text with that week's trimmed doc entry, and drag photos into the two
-         image-slots (add more slots inside .shots if you have more photos — they wrap).
-         Once a project wraps, add a completion date after the h3, e.g.
-         <span class="done">completed 10 / 03</span> — no status label needed otherwise. -->
-
     <div class="mk-stack">
 
       <details class="mk-card">
@@ -121,16 +114,21 @@ section .container{padding-top:48px;padding-bottom:48px}
           <div class="mk-entry">
             <span class="when">Week 1 · 09 / 22</span>
             <p><b>Goals:</b> To create a personalized design notebook with the Silhouette Studio software and a Cricut-like sticker machine. The assignment minimum is to have at least 1 non-practice double-layer vinyl sticker.</p>
-            <p><b>Description:</b> This project was an introduction to the sticker-making process and Maker Lab as a whole. We followed the following process: Design → Cutting → Weeding → Transferring top layer onto bottom layer → Stickering. The design I chose was a cute/whimsical little mushroom with a froggy friend. I started with the mushroom, as I wanted to have something that I could design on Inkscape with simple shapes (rectangle, oval) before sending the components (red base, white dots) to Silhouette Studio. Then, I thought the mushroom would be lonely, so I chose to trace a <a href="https://www.vecteezy.com/vector-art/67534460-collection-of-five-stylized-black-and-white-frog-illustrations ">free SVG of a frog</a>directly in Silhouette Studio.</p>
+            <p><b>Description:</b> This project was an introduction to the sticker-making process and Maker Lab as a whole. We followed the following process: Design → Cutting → Weeding → Transferring top layer onto bottom layer → Stickering. The design I chose was a cute/whimsical little mushroom with a froggy friend. I started with the mushroom, as I wanted to have something that I could design on Inkscape with simple shapes (rectangle, oval) before sending the components (red base, white dots) to Silhouette Studio. Then, I thought the mushroom would be lonely, so I chose to trace a <a href="https://www.vecteezy.com/vector-art/67534460-collection-of-five-stylized-black-and-white-frog-illustrations" style=color:var(--maroon) >free SVG of a frog</a> directly in Silhouette Studio. The background is a leaf-paisley inspired pattern, <a href="https://www.magnific.com/free-vector/seamless-tropical-leaf-pattern-fabric-design-monochrome-botanical-vector-background_428334754.htm" style=color:var(--maroon)>also from Creative Commons,</a> that is meant to invoke a whimsical forest vibe while keeping a more stylized repetition that allows the frog and mushroom to be the main focal point. The window was made in Inkscape, where I again took advantage of the boolean and bitmap tracing tools to crate my final cuts (images 6 and 7).</p>
             <p><b>Time Log:</b> Each sticker took about 20 minutes to complete, from the designing to the actual sticker-ing.</p>
             <p><b>Reflection:</b> From this experience, I learned how to use the sticker machine and Silhouette Studio software. In Silhouette Studio, I initially had trouble importing my mushroom design as an SVG, so resorted to a PNG (image 2). From there, the PNG was unable to be separated for cutting (cutting one color on the left of the cutting board, another color on the right of the cutting board), and tracing was not an option, as my Inkscape project used hairline (no tolerances could find the lines). From this, I learned to use the eraser tool and to use thicker lines if I wanted to trace images.</p>
-            <div class="shots"><div class="mk-carousel">
-              <figure class="shots"><img src="assets/engr2/P1/demo.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>1. This is how we practiced weeding and two-color stickers.</figcaption></figure>
-              <figure class="shots"><img src="assets/engr2/P1/separate-mushies.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>2. Mushroom component separation!</figcaption></figure>
-              <figure class="shots"><img src="assets/engr2/P1/frogress.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>3. Frog progress... frogress??</figcaption></figure>
-              <figure class="shots"><img src="assets/engr2/P1/final-mushroom.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>4. The final mushroom!</figcaption></figure>
-              <figure class="shots"><img src="assets/engr2/P1/settings.jpg" style="width:150px;height:150px;object-fit:cover;border-radius:3px;display:block"><figcaption>5. Cut settings on the machine.</figcaption></figure>
-            </div></div>
+            <div class="shots">
+              <div class="mk-carousel">
+  <figure class="shot"><img src="assets/engr2/P1/demo.jpg" alt="Practicing weeding and two-color stickers"><figcaption>1. This is how we practiced weeding and two-color stickers.</figcaption></figure>
+  <figure class="shot"><img src="assets/engr2/P1/separate-mushies.jpg" alt="Mushroom component separation"><figcaption>2. Mushroom component separation!</figcaption></figure>
+  <figure class="shot"><img src="assets/engr2/P1/frogress.jpg" alt="Frog progress"><figcaption>3. Frog progress... frogress??</figcaption></figure>
+  <figure class="shot"><img src="assets/engr2/P1/final-mushroom.jpg" alt="The final mushroom"><figcaption>4. The final mushroom!</figcaption></figure>
+  <figure class="shot"><img src="assets/engr2/P1/settings.jpg" alt="Cut settings on the machine for the vinyl"><figcaption>5. Cut settings on the machine for the vinyl.</figcaption></figure>
+  <figure class="shot"><img src="assets/engr2/P1/window01.jpg" alt="Boolean operation to define the window shape"><figcaption>6. The frog and mushroom are getting boolean-ed to define the window.</figcaption></figure>
+  <figure class="shot"><img src="assets/engr2/P1/window02.jpg" alt="Final boolean-ed window design, paisley-like and ready to cut"><figcaption>7. The boolean-ed window with the happy fellows boolean-ed out and paisley-like window, ready to cut.</figcaption></figure>
+</div>
+
+            </div>
           </div>
         </div>
       </details>
