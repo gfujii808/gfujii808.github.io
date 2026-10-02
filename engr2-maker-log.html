@@ -45,17 +45,16 @@ section .container{padding-top:48px;padding-bottom:48px}
 .mk-entry .shots image-slot{width:150px;height:150px;border-radius:3px;overflow:hidden;display:block;flex-shrink:0}
 .mk-empty{font-family:var(--font-body);font-style:italic;font-size:14.5px;color:var(--ink-3);margin:0}
 
-.mk-carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch}
-.mk-carousel .shot{scroll-snap-align:start;flex:0 0 100%;width:100%;
-  display:flex;flex-direction:column;gap:8px;margin:0}
-.mk-carousel .shot .stage{width:100%;height:340px;display:flex;
-  align-items:center;justify-content:center;background:var(--paper-2);
-  border-radius:6px;overflow:hidden}
-.mk-carousel .shot .stage img{max-width:100%;max-height:100%;
-  width:auto;height:auto;object-fit:contain;display:block}
-.mk-carousel .shot figcaption{font-size:14px;line-height:1.5;
-  font-style:italic;color:var(--ink-2)}
+.mk-carousel-wrap{position:relative}
+.mk-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+  width:36px;height:36px;border-radius:50%;border:1.5px solid var(--ink-2);
+  background:var(--paper);color:var(--ink);display:flex;align-items:center;
+  justify-content:center;cursor:pointer;font-family:var(--font-body);
+  font-size:20px;line-height:1;transition:background .15s,color .15s}
+.mk-arrow:hover{background:var(--ink);color:var(--paper)}
+.mk-arrow.prev{left:8px}
+.mk-arrow.next{right:8px}
+@media (max-width:600px){.mk-arrow{width:30px;height:30px;font-size:16px}}
   
 @media (max-width:900px){.mk-about{grid-template-columns:1fr}.mk-entry .shots image-slot{width:120px;height:120px}}
 </style>
