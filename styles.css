@@ -83,14 +83,14 @@ section .container{padding-top:var(--pad-y);padding-bottom:var(--pad-y)}
   font-style:italic;color:var(--ink-2)}
 .mk-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;
   background:none;border:none;color:var(--ink);cursor:pointer;
-  font-family:var(--font-body);font-size:28px;line-height:1;
-  text-shadow:0 1px 3px rgba(0,0,0,.25),0 0 6px var(--paper);
-  padding:4px 8px}
-.mk-arrow:hover{color:var(--maroon)}
+  display:flex;align-items:center;padding:8px;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.2));transition:opacity .15s}
+.mk-arrow:hover{opacity:.6}
 .mk-arrow.prev{left:4px}
 .mk-arrow.next{right:4px}
-@media (max-width:600px){.mk-arrow{font-size:22px}}
-@media (max-width:600px){.mk-arrow{width:30px;height:30px;font-size:16px}}
+.mk-arrow svg{width:30px;height:15px;display:block}
+.mk-arrow.next svg{transform:scaleX(-1)}
+@media (max-width:600px){.mk-arrow svg{width:22px;height:11px}}
 
 /* ── Type primitives ──────────────────────────────────────────── */
 .display{font-family:var(--font-display);font-weight:500;line-height:.94;letter-spacing:-0.025em}
