@@ -82,13 +82,14 @@ section .container{padding-top:var(--pad-y);padding-bottom:var(--pad-y)}
 .mk-carousel .shot figcaption{font-size:14px;line-height:1.5;
   font-style:italic;color:var(--ink-2)}
 .mk-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;
-  width:36px;height:36px;border-radius:50%;border:1.5px solid var(--ink-2);
-  background:var(--paper);color:var(--ink);display:flex;align-items:center;
-  justify-content:center;cursor:pointer;font-family:var(--font-body);
-  font-size:20px;line-height:1;transition:background .15s,color .15s}
-.mk-arrow:hover{background:var(--ink);color:var(--paper)}
-.mk-arrow.prev{left:8px}
-.mk-arrow.next{right:8px}
+  background:none;border:none;color:var(--ink);cursor:pointer;
+  font-family:var(--font-body);font-size:28px;line-height:1;
+  text-shadow:0 1px 3px rgba(0,0,0,.25),0 0 6px var(--paper);
+  padding:4px 8px}
+.mk-arrow:hover{color:var(--maroon)}
+.mk-arrow.prev{left:4px}
+.mk-arrow.next{right:4px}
+@media (max-width:600px){.mk-arrow{font-size:22px}}
 @media (max-width:600px){.mk-arrow{width:30px;height:30px;font-size:16px}}
 
 /* ── Type primitives ──────────────────────────────────────────── */
